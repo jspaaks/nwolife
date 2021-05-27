@@ -60,3 +60,12 @@
     - cffconvert github action (here https://github.com/marketplace/actions/cffconvert)
 1. make a new release on GitHub
 1. check the result on sandbox.zenodo.org
+
+### Other resources
+
+- https://guide.esciencecenter.nl/#/citable_software/making_software_citable
+- https://pypi.org/project/cffconvert/
+- https://fair-software.nl/
+- https://citation-file-format.github.io/
+
+
