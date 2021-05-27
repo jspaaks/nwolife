@@ -54,7 +54,7 @@
     - license
     - keywords
 
-## Job 4: cffconvert and GitHub Actions
+### Job 4: cffconvert and GitHub Actions
 
 1. let's use machine-readability to generate some metadata in a format that zenodo understands
     - cffconvert github action (here https://github.com/marketplace/actions/cffconvert)
