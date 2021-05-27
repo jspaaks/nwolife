@@ -49,7 +49,7 @@
 1. check zenodo sandbox
 1. looks nice, but some things could be better:
     - orcids
-    - set of contributors &neq; set of authors
+    - set of contributors &ne; set of authors
     - name of the tool
     - license
     - keywords
