@@ -1,3 +1,5 @@
+(_The [notes branch](https://github.com/jspaaks/nwolife/tree/notes) has an overview of all resources covered in the demo_)
+
 # my awesome software
 
 ## Lorum ipsum
