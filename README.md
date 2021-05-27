@@ -1,13 +1,62 @@
-# my awesome software
+# NWOLife2021 notes
 
-## Lorum ipsum
+## Pitch
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur urna ex. Fusce non mi risus. Sed pharetra dolor sit amet tincidunt tempor. Duis ultricies sapien nibh, id commodo risus semper in. Aliquam erat volutpat. Cras sed neque sed turpis consectetur ullamcorper. Sed rhoncus ante quis maximus luctus. Vivamus id magna nulla. Ut at felis a sem vehicula facilisis. Maecenas non laoreet leo. Morbi nisi mi, tincidunt vitae nisi vitae, tempor mollis lorem. Quisque nulla diam, elementum ut gravida et, pretium egestas lectus. Donec risus massa, porta eu ullamcorper vitae, rhoncus ac ipsum.
+1. The software citation workshop will cover the two sides of software citation:
+    1. supplying metadata
+    1. archiving a copy of the software, get a persistent identifier
+1. You can do either of these by hand, but most of it can be automated
+1. I will demonstrate some existing tools and services that can help you simplify this process
+1. The demonstration assumes you are somewhat familiar with github
+1. For those who can't attend: https://fair-software.nl
 
-Mauris tortor ligula, ullamcorper sit amet volutpat ut, mollis a dolor. Maecenas sit amet placerat tellus. Nam condimentum sollicitudin metus non rutrum. Sed elit elit, suscipit id volutpat vitae, luctus et tortor. Cras quis faucibus purus, sit amet viverra diam. Maecenas sed sodales nibh. Nunc sit amet condimentum leo. 
+## Workshop
 
-## Introduction of CITATION.cff by Druskat et al.
+### Preparations
 
-https://www.software.ac.uk/blog/2017-12-12-standard-format-citation-files
+1. assert zenodo sandbox permissions have been revoked (here https://github.com/settings/applications)
+1. assert logged out of sandbox.zenodo.org (here https://sandbox.zenodo.org/)
+1. assert a test repository in jspaaks org exists (here https://github.com/jspaaks/nwolife)
+    - has branch with README.md with plaintext instructions on how to cite (https://github.com/jspaaks/nwolife/tree/ye-old-style)
+    - has branch with CITATION file (https://github.com/jspaaks/nwolife/tree/wilson)
+    - main branch is where we will add CITATION.cff file
 
-![druskat-et-al-cropped](https://user-images.githubusercontent.com/4558105/119789649-8a252880-bed3-11eb-82f2-2adc63885b75.png)
+### Why cite software?
+
+1. Helps reproducibility
+1. Helps build a culture of giving developers credit for their work, in turn improves 
+    - the time developers can spend on developing and maintaining software
+    - the quality of the software
+
+### Job 1: add machine readable citation metadata
+
+1. Inspect ye-old-style branch
+1. Inspect wilson branch
+1. Let's use [cffinit](https://bit.ly/cffinit) to make the repo's citation metadata machine-readable with a [Citation File Format](https://citation-file-format.github.io/) file 
+    - Helps integration with other tools, services, websites, search engines (e.g. research software.nl, schema.org)
+
+### Job 2: Making a release on GitHub
+
+1. Release without storing a snapshot on Zenodo (here https://github.com/jspaaks/nwolife/releases/new)
+    - maybe need to explain semver / semantic versioning (here https://semver.org/)
+
+### Job 3: GitHub-Zenodo integration
+
+1. let's release contents of main branch on sandbox.zenodo.org
+1. sandbox.zenodo.org, log in with github, enable app
+1. https://github.com/settings/applications now shows sandbox
+1. make release on GitHub
+1. check zenodo sandbox
+1. looks nice, but some things could be better:
+    - orcids
+    - set of contributors &neq; set of authors
+    - name of the tool
+    - license
+    - keywords
+
+## Job 4: cffconvert and GitHub Actions
+
+1. let's use machine-readability to generate some metadata in a format that zenodo understands
+    - cffconvert github action (here https://github.com/marketplace/actions/cffconvert)
+1. make a new release on GitHub
+1. check the result on sandbox.zenodo.org
