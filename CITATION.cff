@@ -1,6 +1,6 @@
 # YAML 1.2
 ---
-abstract: "It's really awesome"!
+abstract: "It's really awesome!"
 authors: 
   -
     affiliation: "Netherlands eScience Center"
